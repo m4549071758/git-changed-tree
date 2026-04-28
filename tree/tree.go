@@ -44,11 +44,9 @@ func PrintTree(node *Node, indent string, isLast bool, isRoot bool) {
 	if !isRoot {
 		marker := "├── "
 		if isLast {
-			marker := "└── "
-			fmt.Printf("%s%s%s\n", indent, marker, node.Name)
-		} else {
-			fmt.Printf("%s%s%s\n", indent, marker, node.Name)
+			marker = "└── "
 		}
+		fmt.Printf("%s%s%s\n", indent, marker, node.Name)
 	} else {
 		fmt.Println(node.Name)
 	}
@@ -58,7 +56,7 @@ func PrintTree(node *Node, indent string, isLast bool, isRoot bool) {
 		if isLast {
 			newIndent += "    "
 		} else {
-			newIndent += "━E  "
+			newIndent += "│   "
 		}
 	}
 
@@ -67,7 +65,7 @@ func PrintTree(node *Node, indent string, isLast bool, isRoot bool) {
 		keys = append(keys, k)
 	}
 	sort.Slice(keys, func(i, j int) bool {
-		// チE��レクトリを優允E
+		// ディレクトリを優先
 		iDir := len(node.Children[keys[i]].Children) > 0
 		jDir := len(node.Children[keys[j]].Children) > 0
 		if iDir != jDir {
