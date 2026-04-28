@@ -58,7 +58,7 @@ func PrintTree(node *Node, indent string, isLast bool, isRoot bool) {
 		if isLast {
 			newIndent += "    "
 		} else {
-			newIndent += "│   "
+			newIndent += "━E  "
 		}
 	}
 
@@ -67,7 +67,7 @@ func PrintTree(node *Node, indent string, isLast bool, isRoot bool) {
 		keys = append(keys, k)
 	}
 	sort.Slice(keys, func(i, j int) bool {
-		// ディレクトリを優先
+		// チE��レクトリを優允E
 		iDir := len(node.Children[keys[i]].Children) > 0
 		jDir := len(node.Children[keys[j]].Children) > 0
 		if iDir != jDir {
