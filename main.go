@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"git-changed-tree/git"
-	"git-changed-tree/tree"
+	"github.com/m4549071758/git-changed-tree/git"
+	"github.com/m4549071758/git-changed-tree/tree"
 )
 
 func main() {
